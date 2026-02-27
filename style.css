@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 0, 0, 0.3);
+  --surface-color: rgba(255, 0, 0, 0.1);
+  --surface-color-hover: rgba(255, 0, 0, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+  --profile-image-border: rgba(255, 0, 0, 0.5);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(255, 50, 210, 0.3);
+  --surface-color: rgba(255, 65, 215, 0.05);
+  --surface-color-hover: rgba(255, 65, 215, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sun.svg);
+  --profile-image-border: rgba(100, 100, 255, 0.5);
+}
+
+body {
+  /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  */
+
+  /* background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+  transition: all 0.6s;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+#container {
+  width: 360px;
+  /* border: 1px solid red; */
+  margin: 56px auto 0px; /*no css existe uma regra na qual "margin auto" não se aplica nem no topo nem em baixo*/
+  padding: 0 24px;
+  /* display: block; garante toda a largura possivel de tela forçando os proximos elementos abaixo para irem pra baixo e acima ir para cima */
+  /* display: inline; faz com que os elementos fiquem na linha, sem forçar que os elementos vá para baixo ou acima dele */
+}
+
+#profile {
+  text-align: center; /* alternativa para margin: auto, pois é um elemento pai(parent) */
+  padding: 8px 24px;
+}
+
+#profile img {
+  /* height: 112px; geralmente não precisa deixar a altura, pois a caixa sera empurrada para baixo conforme novo conteúdo é colocado dentro*/
+  width: 112px;
+  border: 1px solid var(--profile-image-border);
+  border-radius: 50%;
+  /* display: block; não usar quando usando o metodo alternativo acima */
+  /* margin: auto; elementos inline não é possivel aplicar margin auto */
+}
+
+#profile p {
+  font-size: 18px;
+  font-weight: 500;
+  /* font-size: 16px;  é o default da maioria dos browsers */
+  line-height: 24px;
+  margin: 8px auto 0px;
+}
+
+/* switch */
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 16px auto;
+}
+
+#switch button {
+  height: 32px;
+  width: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 8px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center; /* justify-content é utilizado quando o display é flex, se é block, se usa text-align = center | alinha no vertical*/
+  align-items: center; /* alinha os items no centro do eixo horizontal */
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  transition: background 0.4s; /* propriedade, quanto tempo */
+}
+
+ul li a ion-icon {
+  margin-left: 0.3em;
+  font-size: 24px;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--stroke-color);
+}
+
+/* social-links */
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  padding: 16px 0;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  border-radius: 50%;
+  transition: background 0.4s;
+}
+
+#social-links ion-icon {
+  font-size: 32px;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  text-align: center;
+  font-weight: 500;
+}
