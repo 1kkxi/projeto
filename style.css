@@ -36,6 +36,7 @@ body {
 
   /* background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
   transition: all 0.6s;
 }
 
@@ -188,4 +189,15 @@ ul li a:hover {
 footer {
   text-align: center;
   font-weight: 500;
+}
+
+/* media queries */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
