@@ -159,6 +159,7 @@ ul li a {
 ul li a ion-icon {
   margin-left: 0.3em;
   font-size: 24px;
+  margin-right: 5px;
 }
 
 /* pseudo-selector */
