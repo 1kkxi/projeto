@@ -16,11 +16,11 @@ function toggleMode() {
   // substituir a imagem
   if(html.classList.contains('light')) {
     img.setAttribute("src", "./assets/avatar-light.jpg")
-    img.setAttribute("alt", "kronii art made by myself")
+    img.setAttribute("alt", "sakura tree on white background")
     // se tem class 'light' troca pro avatar light
   } else {
     img.setAttribute("src", "./assets/avatar-dark.jpg")
-    img.setAttribute("alt", "hakos baelz art made by myself")
+    img.setAttribute("alt", "red petals tree with a bridge in a red background")
     // caso contrário troca para avatar normal
   }
 }
