@@ -63,6 +63,7 @@ body * {
 
 #profile img {
   /* height: 112px; geralmente não precisa deixar a altura, pois a caixa sera empurrada para baixo conforme novo conteúdo é colocado dentro*/
+  height: 112px;
   width: 112px;
   border: 1px solid var(--profile-image-border);
   border-radius: 50%;
